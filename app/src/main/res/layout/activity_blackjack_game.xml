@@ -4,145 +4,196 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.john.cardgames.activities.BlackjackGameActivity">
+    tools:context="com.example.john.cardgames.activities.BlackjackGameActivity"
+    android:background="@drawable/background">
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/playerImage5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxHeight="80dp"
         android:maxWidth="60dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/imageView7"
+        app:layout_constraintRight_toLeftOf="@+id/playerImage3"
         app:srcCompat="@drawable/back"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="144dp" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/playerImage3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxHeight="80dp"
         android:maxWidth="60dp"
-        app:layout_constraintLeft_toRightOf="@+id/imageView6"
-        app:layout_constraintRight_toLeftOf="@+id/imageView8"
+        app:layout_constraintLeft_toRightOf="@+id/playerImage5"
+        app:layout_constraintRight_toLeftOf="@+id/playerImage1"
         app:srcCompat="@drawable/back"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="144dp" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/playerImage1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxHeight="80dp"
         android:maxWidth="60dp"
-        app:layout_constraintLeft_toRightOf="@+id/imageView7"
-        app:layout_constraintRight_toLeftOf="@+id/imageView9"
+        app:layout_constraintLeft_toRightOf="@+id/playerImage3"
+        app:layout_constraintRight_toLeftOf="@+id/playerImage2"
         app:srcCompat="@drawable/back"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="144dp" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/playerImage2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxHeight="80dp"
         android:maxWidth="60dp"
-        app:layout_constraintLeft_toRightOf="@+id/imageView8"
-        app:layout_constraintRight_toLeftOf="@+id/imageView10"
+        app:layout_constraintLeft_toRightOf="@+id/playerImage1"
+        app:layout_constraintRight_toLeftOf="@+id/playerImage4"
         app:srcCompat="@drawable/back"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="144dp" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/playerImage4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxHeight="80dp"
         android:maxWidth="60dp"
-        app:layout_constraintLeft_toRightOf="@+id/imageView9"
+        app:layout_constraintLeft_toRightOf="@+id/playerImage2"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/back"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="144dp" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/dealerImage1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxHeight="80dp"
         android:maxWidth="60dp"
         app:srcCompat="@drawable/back"
-        app:layout_constraintRight_toLeftOf="@+id/imageView4"
-        app:layout_constraintLeft_toRightOf="@+id/imageView2"
+        app:layout_constraintRight_toLeftOf="@+id/dealerImage2"
+        app:layout_constraintLeft_toRightOf="@+id/dealerImage3"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8" />
+        app:layout_constraintBottom_toTopOf="@+id/playerImage1" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/dealerImage2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxHeight="80dp"
         android:maxWidth="60dp"
         app:srcCompat="@drawable/back"
-        app:layout_constraintRight_toLeftOf="@+id/imageView5"
-        app:layout_constraintLeft_toRightOf="@+id/imageView3"
+        app:layout_constraintRight_toLeftOf="@+id/dealerImage4"
+        app:layout_constraintLeft_toRightOf="@+id/dealerImage1"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView9" />
+        app:layout_constraintBottom_toTopOf="@+id/playerImage2" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/dealerImage4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxHeight="80dp"
         android:maxWidth="60dp"
         app:srcCompat="@drawable/back"
+        android:visibility="invisible"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/imageView4"
+        app:layout_constraintLeft_toRightOf="@+id/dealerImage2"
         android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintBottom_toTopOf="@+id/playerImage4"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/dealerImage3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxHeight="80dp"
         android:maxWidth="60dp"
         app:srcCompat="@drawable/back"
-        app:layout_constraintRight_toLeftOf="@+id/imageView3"
-        app:layout_constraintLeft_toRightOf="@+id/imageView"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/dealerImage1"
+        app:layout_constraintLeft_toRightOf="@+id/dealerImage5"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView7" />
+        app:layout_constraintBottom_toTopOf="@+id/playerImage3" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/dealerImage5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxWidth="60dp"
         android:maxHeight="80dp"
         app:srcCompat="@drawable/back"
-        app:layout_constraintRight_toLeftOf="@+id/imageView2"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/dealerImage3"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6" />
+        app:layout_constraintBottom_toTopOf="@+id/playerImage5" />
+
+    <Button
+        android:id="@+id/dealButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onDealClicked"
+        android:text="deal!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
+
+    <Button
+        android:id="@+id/stickButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="51dp"
+        android:layout_marginLeft="74dp"
+        android:onClick="stick"
+        android:text="stick"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/twistButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="51dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="twist"
+        android:onClick="twist"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintLeft_toRightOf="@+id/stickButton"
+        app:layout_constraintRight_toRightOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

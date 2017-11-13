@@ -30,9 +30,9 @@ public class TestPlayer {
         deck = new Deck();
         player = new Player("John");
         dealer = new Dealer("dealer", deck);
-        card = new Card(Suit.SPADES, Rank.ACE);
-        card2 = new Card(Suit.SPADES, Rank.KING);
-        card3 = new Card(Suit.SPADES, Rank.FIVE);
+        card = Card.ACESPADES;
+        card2 = Card.KINGSPADES;
+        card3 = Card.FIVESPADES;
     }
 
     @Test

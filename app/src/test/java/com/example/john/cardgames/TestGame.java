@@ -5,8 +5,7 @@ import com.example.john.cardgames.setup.Dealer;
 import com.example.john.cardgames.setup.Deck;
 import com.example.john.cardgames.setup.Game;
 import com.example.john.cardgames.setup.Player;
-import com.example.john.cardgames.setup.Rank;
-import com.example.john.cardgames.setup.Suit;
+
 
 import org.junit.Before;
 import org.junit.Test;
@@ -33,9 +32,9 @@ public class TestGame {
         player = new Player("John");
         dealer = new Dealer("dealer", deck);
         game = new Game(player, dealer, deck);
-        card = new Card(Suit.SPADES, Rank.ACE);
-        card2 = new Card(Suit.SPADES, Rank.KING);
-        card3 = new Card(Suit.SPADES, Rank.FIVE);
+        card = Card.ACESPADES;
+        card2 = Card.KINGSPADES;
+        card3 = Card.FIVESPADES;
     }
 
     @Test
@@ -50,7 +49,7 @@ public class TestGame {
         player.takeCard(card);
         player.takeCard(card2);
         dealer.takeCard(card);
-        dealer.takeCard(card3);
+        dealer.takeCard(card);
         player.calculateScore();
         dealer.calculateScore();
         assertEquals(player, game.checkWinner(player, dealer));

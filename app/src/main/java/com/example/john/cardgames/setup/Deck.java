@@ -21,10 +21,8 @@ public class Deck {
     }
 
     public void generateDeck() {
-        for (Suit suit : Suit.values()) {
-            for (Rank rank : Rank.values()) {
-                cards.add(new Card(suit, rank));
-            }
+        for (Card card : Card.values()) {
+                cards.add(card);
         }
     }
 

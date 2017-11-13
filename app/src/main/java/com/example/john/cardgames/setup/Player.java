@@ -24,6 +24,10 @@ public class Player {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public ArrayList<Card> getCards() {
         return cards;
     }
@@ -50,7 +54,7 @@ public class Player {
 
         if (isBust()) {
             for (Card card : getCards()) {
-                if (card.getRank() == Rank.ACE) {
+                if (card.getValue() == 11) {
                     score -= 10;
                     setPlayerScore(score);
                     if (score <= 21) {
