@@ -78,4 +78,8 @@ public class Player {
         return (!isBust() && (cards.size()) == 5);
     }
 
+    public void clearArray() {
+        cards.clear();
+    }
+
 }

@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class Game {
 
-    Player player;
-    Dealer dealer;
-    Deck deck;
+    private Player player;
+    private Dealer dealer;
+    private Deck deck;
 
     public Game(Player player, Dealer dealer, Deck deck) {
         this.player = player;

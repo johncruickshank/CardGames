@@ -11,14 +11,18 @@
         android:id="@+id/enterName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="332dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="443dp"
         android:ems="10"
         android:hint="Enter your name"
         android:inputType="text"
+        android:textColor="@android:color/holo_purple"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.328" />
 
     <Button
         android:id="@+id/playBlackjackButton"
@@ -41,4 +45,43 @@
         android:id="@+id/guideline"
         app:layout_constraintGuide_begin="-23dp"
         android:orientation="horizontal" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="356dp"
+        android:layout_height="292dp"
+        app:srcCompat="@drawable/card_values"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.559" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="131dp"
+        android:layout_height="130dp"
+        app:srcCompat="@drawable/twentyone"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="53dp"
+        android:layout_marginLeft="37dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/twentyOneRules"
+        android:layout_width="213dp"
+        android:layout_height="161dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="41dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/twentyOneRules"
+        android:textColor="#712b94"
+        android:typeface="sans"
+        app:layout_constraintLeft_toRightOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
