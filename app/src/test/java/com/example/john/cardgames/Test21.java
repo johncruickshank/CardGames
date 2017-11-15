@@ -3,7 +3,7 @@ package com.example.john.cardgames;
 import com.example.john.cardgames.setup.Card;
 import com.example.john.cardgames.setup.Dealer;
 import com.example.john.cardgames.setup.Deck;
-import com.example.john.cardgames.setup.Game;
+import com.example.john.cardgames.setup.Game21;
 import com.example.john.cardgames.setup.Player;
 
 
@@ -16,9 +16,9 @@ import static org.junit.Assert.assertEquals;
  * Created by John on 12/11/2017.
  */
 
-public class TestGame {
+public class Test21 {
 
-    Game game;
+    Game21 game;
     Deck deck;
     Player player;
     Dealer dealer;
@@ -31,7 +31,7 @@ public class TestGame {
         deck = new Deck();
         player = new Player("John");
         dealer = new Dealer("dealer", deck);
-        game = new Game(player, dealer, deck);
+        game = new Game21(player, dealer, deck);
         card = Card.ACESPADES;
         card2 = Card.KINGSPADES;
         card3 = Card.FIVESPADES;

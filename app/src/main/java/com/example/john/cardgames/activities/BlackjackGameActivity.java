@@ -1,7 +1,6 @@
 package com.example.john.cardgames.activities;
 
 import android.graphics.Typeface;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,9 +12,8 @@ import android.widget.TextView;
 import com.example.john.cardgames.R;
 import com.example.john.cardgames.setup.Dealer;
 import com.example.john.cardgames.setup.Deck;
-import com.example.john.cardgames.setup.Game;
+import com.example.john.cardgames.setup.Game21;
 import com.example.john.cardgames.setup.Player;
-
 import static com.example.john.cardgames.R.id.houseWins;
 
 
@@ -24,10 +22,10 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
     private static Deck deck;
     private static Player player;
     private static Dealer dealer;
-    private static Game game;
+    private static Game21 game;
     int playerWinCounter;
     int houseWinCounter;
-    Button deal;
+    ImageButton deal;
     Button twist;
     Button stick;
     ImageButton playAgain;
@@ -47,6 +45,7 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
     static ImageView playerWin;
     static TextView playerWins;
     static TextView dealerWins;
+    static TextView dealText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +55,7 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
         name = extras.getString("name");
         houseWinCounter = 0;
         playerWinCounter = 0;
-        deal = (Button) findViewById(R.id.dealButton);
+        deal = (ImageButton) findViewById(R.id.dealButton);
         twist = (Button) findViewById(R.id.twistButton);
         stick = (Button) findViewById(R.id.stickButton);
         playAgain = (ImageButton) findViewById(R.id.playAgainButton);
@@ -75,6 +74,7 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
         playerWin = (ImageView) findViewById(R.id.playerWin);
         playerWins = (TextView) findViewById(R.id.playerWins);
         dealerWins = (TextView) findViewById(R.id.dealerWins);
+        dealText = (TextView) findViewById(R.id.dealText);
         Typeface font = Typeface.createFromAsset(getAssets(), "fff.ttf");
         ((TextView)findViewById(R.id.playerWins)).setTypeface(font);
         ((TextView)findViewById(R.id.dealerWins)).setTypeface(font);
@@ -86,6 +86,7 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
 
     public void onPlayAgain(View view) {
         deal.setVisibility(View.VISIBLE);
+        dealText.setVisibility(View.VISIBLE);
         houseWin.setVisibility(View.GONE);
         playerWin.setVisibility(View.GONE);
         realPlay1.setVisibility(View.INVISIBLE);
@@ -109,12 +110,13 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
     public void onClick(View view) {
         // get rid of deal button
         deal.setVisibility(View.GONE);
+        dealText.setVisibility(View.GONE);
 
         // initialise new game
         deck = new Deck();
         dealer = new Dealer("dealer", deck);
         player = new Player(name);
-        game = new Game(player, dealer, deck);
+        game = new Game21(player, dealer, deck);
         // deal initial cards
         game.initialDeal();
         // display one dealer card, 2 player
@@ -131,15 +133,14 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
         // check for blackjack
         if (player.checkBlackjack()) {
             gameOver();
+        }else{
+            // make twist or stick options available
+            twist.setVisibility(View.VISIBLE);
+            stick.setVisibility(View.VISIBLE);
         }
-
-        // make twist or stick options available
-        twist.setVisibility(View.VISIBLE);
-        stick.setVisibility(View.VISIBLE);
-
     }
 
-
+    // player actions, twist till bust or stick
     public void twist(View view) {
 
         player.takeCard(dealer.deal());
@@ -160,60 +161,49 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
         if (player.isBust()) {
             gameOver();
         }
-
     }
-
 
     public void stick(View view) {
 
         // get rid of stick/twist buttons
         twist.setVisibility(View.GONE);
         stick.setVisibility(View.GONE);
-//        new CountDownTimer(2000, 1000) {
-//            @Override
-//            public void onTick(long millisUntilFinished) {
-//            }
-//            @Override
-//            public void onFinish() {
-                // reveal second card
-                realDeal2.setImageResource(dealer.getCards().get(1).getImage());
-//            }
-//        }.start();
+
+        // reveal second card
+        realDeal2.setImageResource(dealer.getCards().get(1).getImage());
+
+        // dealer's turn begins
         dealer.calculateScore();
-        // dealer's turn
         // dealer must twist if score < 16, and if score is less than players
         while (!dealer.isBust() && dealer.getPlayerScore() < player.getPlayerScore() && dealer.getPlayerScore() < 16) {
-//            new CountDownTimer(3000, 1000) {
-//                @Override
-//                public void onTick(long millisUntilFinished) {
-//                }
-//                @Override
-//                public void onFinish() {
-                    dealer.takeCard(dealer.deal());
-                    if (dealer.getCards().size() == 3) {
-                        realDeal3.setImageResource(dealer.getCards().get(2).getImage());
-                        realDeal3.setVisibility(View.VISIBLE);
-                    }
-                    if (dealer.getCards().size() == 4) {
-                        realDeal4.setImageResource(dealer.getCards().get(3).getImage());
-                        realDeal4.setVisibility(View.VISIBLE);
-                    }
-                    if (dealer.getCards().size() == 5) {
-                        realDeal5.setImageResource(dealer.getCards().get(4).getImage());
-                        realDeal5.setVisibility(View.VISIBLE);
-                    }
-                    // store the dealers score
-                    dealer.calculateScore();
-                    if (dealer.isBust()) {
-                        gameOver();
-                    }
-//                }
-//            }.start();
+
+            dealer.takeCard(dealer.deal());
+            if (dealer.getCards().size() == 3) {
+                realDeal3.setImageResource(dealer.getCards().get(2).getImage());
+                realDeal3.setVisibility(View.VISIBLE);
+            }
+            if (dealer.getCards().size() == 4) {
+                realDeal4.setImageResource(dealer.getCards().get(3).getImage());
+                realDeal4.setVisibility(View.VISIBLE);
+            }
+            if (dealer.getCards().size() == 5) {
+                realDeal5.setImageResource(dealer.getCards().get(4).getImage());
+                realDeal5.setVisibility(View.VISIBLE);
+            }
+            // store the dealers score, game over if bust
+            dealer.calculateScore();
+            if (dealer.isBust()) {
+                gameOver();
+            }
         }
+        // go to game over after dealers turn
         gameOver();
     }
 
+    // end game, display winner, offer restart
     public void gameOver() {
+        player.calculateScore();
+        dealer.calculateScore();
         twist.setVisibility(View.GONE);
         stick.setVisibility(View.GONE);
 
@@ -221,17 +211,18 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
             realDeal2.setImageResource(dealer.getCards().get(1).getImage());
             playerWin.setVisibility(View.VISIBLE);
             playAgain.setVisibility(View.VISIBLE);
-            playerWinCounter++;
+            playerWinCounter = playerWinCounter + 1;
         }
         else {
-            realDeal2.setImageResource(dealer.getCards().get(1).getImage());
+            if (!player.isBust()) {
+                realDeal2.setImageResource(dealer.getCards().get(1).getImage());
+            }
             houseWin.setVisibility(View.VISIBLE);
             playAgain.setVisibility(View.VISIBLE);
-            houseWinCounter++;
+            houseWinCounter = houseWinCounter + 1;
         }
 
-
-
+        // display win count
         playerWins.setText(name + "'s wins:\n" + playerWinCounter);
         dealerWins.setText("Dealer's wins:\n" + houseWinCounter);
     }

@@ -17,7 +17,7 @@
         android:textAlignment="center"
         android:textColor="#712b94"
         android:textSize="24sp"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,106 +27,108 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:maxHeight="80dp"
-        android:maxWidth="60dp"
+        android:maxHeight="90dp"
+        android:maxWidth="70dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/playerImage3"
         app:srcCompat="@drawable/back"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="144dp" />
+        android:layout_marginBottom="158dp" />
 
     <ImageView
         android:id="@+id/playerImage3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:maxHeight="80dp"
-        android:maxWidth="60dp"
+        android:maxHeight="90dp"
+        android:maxWidth="70dp"
         app:layout_constraintLeft_toRightOf="@+id/playerImage5"
         app:layout_constraintRight_toLeftOf="@+id/playerImage1"
         app:srcCompat="@drawable/back"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="144dp" />
+        android:layout_marginBottom="158dp" />
 
     <ImageView
         android:id="@+id/playerImage1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:maxHeight="80dp"
-        android:maxWidth="60dp"
+        android:maxHeight="90dp"
+        android:maxWidth="70dp"
         app:layout_constraintLeft_toRightOf="@+id/playerImage3"
         app:layout_constraintRight_toLeftOf="@+id/playerImage2"
         app:srcCompat="@drawable/back"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="144dp" />
+        android:layout_marginBottom="158dp" />
 
     <ImageView
         android:id="@+id/playerImage2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:maxHeight="80dp"
-        android:maxWidth="60dp"
+        android:maxHeight="90dp"
+        android:maxWidth="70dp"
         app:layout_constraintLeft_toRightOf="@+id/playerImage1"
         app:layout_constraintRight_toLeftOf="@+id/playerImage4"
         app:srcCompat="@drawable/back"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="144dp" />
+        android:layout_marginBottom="158dp" />
 
     <ImageView
         android:id="@+id/playerImage4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:maxHeight="80dp"
-        android:maxWidth="60dp"
+        android:maxHeight="90dp"
+        android:maxWidth="70dp"
         app:layout_constraintLeft_toRightOf="@+id/playerImage2"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/back"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="144dp" />
+        android:layout_marginBottom="158dp" />
 
     <ImageView
         android:id="@+id/dealerImage1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:maxHeight="80dp"
-        android:maxWidth="60dp"
+        android:maxHeight="90dp"
+        android:maxWidth="70dp"
         app:srcCompat="@drawable/back"
         app:layout_constraintRight_toLeftOf="@+id/dealerImage2"
         app:layout_constraintLeft_toRightOf="@+id/dealerImage3"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/playerImage1" />
+        app:layout_constraintBottom_toTopOf="@+id/playerImage1"
+        app:layout_constraintVertical_bias="0.469" />
 
     <ImageView
         android:id="@+id/dealerImage2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:maxHeight="80dp"
-        android:maxWidth="60dp"
+        android:maxHeight="90dp"
+        android:maxWidth="70dp"
         app:srcCompat="@drawable/back"
         app:layout_constraintRight_toLeftOf="@+id/dealerImage4"
         app:layout_constraintLeft_toRightOf="@+id/dealerImage1"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/playerImage2" />
+        app:layout_constraintBottom_toTopOf="@+id/playerImage2"
+        app:layout_constraintVertical_bias="0.469" />
 
     <ImageView
         android:id="@+id/dealerImage4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:maxHeight="80dp"
-        android:maxWidth="60dp"
+        android:maxHeight="90dp"
+        android:maxWidth="70dp"
         app:srcCompat="@drawable/back"
         android:visibility="invisible"
         app:layout_constraintRight_toRightOf="parent"
@@ -134,15 +136,16 @@
         android:layout_marginBottom="9dp"
         app:layout_constraintBottom_toTopOf="@+id/playerImage4"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.466" />
 
     <ImageView
         android:id="@+id/dealerImage3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:maxHeight="80dp"
-        android:maxWidth="60dp"
+        android:maxHeight="90dp"
+        android:maxWidth="70dp"
         app:srcCompat="@drawable/back"
         android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/dealerImage1"
@@ -150,15 +153,16 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/playerImage3" />
+        app:layout_constraintBottom_toTopOf="@+id/playerImage3"
+        app:layout_constraintVertical_bias="0.469" />
 
     <ImageView
         android:id="@+id/dealerImage5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:maxWidth="60dp"
-        android:maxHeight="80dp"
+        android:maxWidth="70dp"
+        android:maxHeight="90dp"
         app:srcCompat="@drawable/back"
         android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/dealerImage3"
@@ -166,30 +170,34 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/playerImage5" />
+        app:layout_constraintBottom_toTopOf="@+id/playerImage5"
+        app:layout_constraintVertical_bias="0.469" />
 
-    <Button
+    <ImageButton
         android:id="@+id/dealButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="83dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="onDealClicked"
-        android:text="deal!"
+        android:background="@drawable/deck"
+        android:elevation="7dp"
+        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465" />
+        app:layout_constraintVertical_bias="0.435" />
 
     <Button
         android:id="@+id/stickButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="51dp"
-        android:layout_marginLeft="74dp"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="65dp"
+        android:layout_marginLeft="75dp"
+        android:background="@drawable/action_button"
         android:onClick="stick"
         android:text="stick"
         android:visibility="invisible"
@@ -198,16 +206,17 @@
 
     <Button
         android:id="@+id/twistButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="51dp"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="65dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:text="twist"
+        android:background="@drawable/action_button"
         android:onClick="twist"
+        android:text="twist"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintLeft_toRightOf="@+id/stickButton"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -224,7 +233,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/you_lose"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintVertical_bias="0.459" />
 
     <ImageView
         android:id="@+id/playerWin"
@@ -239,7 +250,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/win"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintVertical_bias="0.477" />
 
     <ImageButton
         android:id="@+id/playAgainButton"
@@ -256,18 +269,36 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.979"
-        app:srcCompat="@drawable/play_again" />
+        android:background="@drawable/play_again" />
 
     <TextView
         android:id="@+id/playerWins"
         android:layout_width="168dp"
         android:layout_height="107dp"
-        android:layout_marginLeft="53dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="16dp"
         android:textAlignment="center"
         android:textColor="#712b94"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dealText"
+        android:layout_width="175dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/click_the_deck_to_deal"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="#712b94"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.439" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">CardGames</string>
-    <string name="twentyOneRules">Closest to 21 wins.\nDealer must twist below 16.\nAce and card valued at 10 wins! unless…\nDealer wins in event of any tie.</string>
+    <string name="twentyOneRules">Closest to 21 wins.\nDealer must twist below 16.\nAce and card valued at 10 wins! unless…\nDealer wins in event of any tie.\nUse 5 cards and it beats anything but Ace and 10</string>
     <string name="card_games">Card Games!</string>
+    <string name="click_the_deck_to_deal">Click the deck to deal</string>
+    <string name="highCardRules">Draw one card each.\nPlayer with the highest card wins!</string>
 </resources>

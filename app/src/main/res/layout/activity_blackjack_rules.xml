@@ -16,7 +16,8 @@
         android:ems="10"
         android:hint="Enter your name"
         android:inputType="text"
-        android:textColor="@android:color/holo_purple"
+        android:textAlignment="center"
+        android:textColor="#712b94"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -30,6 +31,7 @@
         android:layout_height="49dp"
         android:onClick="onPlayBlackjack"
         android:text="play"
+        android:background="@drawable/action_button"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -48,8 +50,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="356dp"
-        android:layout_height="292dp"
+        android:layout_width="289dp"
+        android:layout_height="212dp"
         app:srcCompat="@drawable/card_values"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
@@ -59,12 +61,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.559" />
+        app:layout_constraintVertical_bias="0.613"
+        app:layout_constraintHorizontal_bias="0.506" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="131dp"
-        android:layout_height="130dp"
+        android:layout_width="103dp"
+        android:layout_height="99dp"
         app:srcCompat="@drawable/twentyone"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="53dp"
@@ -73,10 +76,10 @@
 
     <MultiAutoCompleteTextView
         android:id="@+id/twentyOneRules"
-        android:layout_width="213dp"
-        android:layout_height="161dp"
+        android:layout_width="237dp"
+        android:layout_height="231dp"
         android:layout_marginLeft="13dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif"
         android:text="@string/twentyOneRules"
         android:textColor="#712b94"

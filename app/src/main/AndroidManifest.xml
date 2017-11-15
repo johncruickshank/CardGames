@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.BlackjackRulesActivity" />
-        <activity android:name=".activities.BlackjackGameActivity"></activity>
+        <activity android:name=".activities.BlackjackGameActivity" />
+        <activity android:name=".activities.HighCardRulesActivity" />
+        <activity android:name=".activities.HighCardGameActivity"></activity>
     </application>
 
 </manifest>

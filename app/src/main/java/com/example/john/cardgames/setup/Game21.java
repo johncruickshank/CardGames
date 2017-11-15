@@ -11,13 +11,13 @@ import java.util.ArrayList;
  * Created by John on 10/11/2017.
  */
 
-public class Game {
+public class Game21 {
 
     private Player player;
     private Dealer dealer;
     private Deck deck;
 
-    public Game(Player player, Dealer dealer, Deck deck) {
+    public Game21(Player player, Dealer dealer, Deck deck) {
         this.player = player;
         this.dealer = dealer;
         this.deck = deck;
@@ -34,6 +34,9 @@ public class Game {
     public Player checkWinner(Player player, Dealer dealer) {
         if (!player.isBust() && dealer.isBust()) {
             return player;
+        }
+        if (!player.isBust() && dealer.checkFiveCardTrick()) {
+            return dealer;
         }
         if (!player.isBust() && player.checkFiveCardTrick() && !dealer.checkFiveCardTrick()) {
                 return player;

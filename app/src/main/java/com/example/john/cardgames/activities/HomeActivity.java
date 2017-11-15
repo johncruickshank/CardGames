@@ -14,6 +14,7 @@ import com.example.john.cardgames.R;
 public class HomeActivity extends AppCompatActivity {
 
     private ImageButton blackjackButton;
+    private ImageButton highCardButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         blackjackButton = (ImageButton) findViewById(R.id.blackjackButton);
+        highCardButton = (ImageButton) findViewById(R.id.highCardButton);
 
         Typeface font = Typeface.createFromAsset(getAssets(), "fff.ttf");
         ((TextView)findViewById(R.id.title)).setTypeface(font);
@@ -28,6 +30,11 @@ public class HomeActivity extends AppCompatActivity {
 
     public void onBlackjackClicked(View button) {
         Intent i = new Intent(this, BlackjackRulesActivity.class);
+        startActivity(i);
+    }
+
+    public void onHighCardClicked(View button) {
+        Intent i = new Intent(this, HighCardRulesActivity.class);
         startActivity(i);
     }
 
