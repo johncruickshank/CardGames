@@ -26,6 +26,8 @@ public class HomeActivity extends AppCompatActivity {
 
         Typeface font = Typeface.createFromAsset(getAssets(), "fff.ttf");
         ((TextView)findViewById(R.id.title)).setTypeface(font);
+        ((TextView)findViewById(R.id.twentyoneTitle)).setTypeface(font);
+        ((TextView)findViewById(R.id.highCardTitle)).setTypeface(font);
     }
 
     public void onBlackjackClicked(View button) {

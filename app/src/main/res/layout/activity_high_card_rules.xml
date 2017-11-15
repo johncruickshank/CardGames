@@ -48,8 +48,8 @@
         android:layout_height="99dp"
         app:srcCompat="@drawable/high_card"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="77dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginLeft="5dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
 
@@ -94,13 +94,13 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="77dp"
+        android:layout_marginTop="62dp"
         android:ems="10"
-        android:text="High Card"
+        android:text="@string/high_card"
         android:textAlignment="center"
         android:textColor="#712b94"
         android:textSize="24sp"
-        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

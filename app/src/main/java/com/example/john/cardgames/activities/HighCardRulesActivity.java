@@ -27,6 +27,7 @@ public class HighCardRulesActivity extends AppCompatActivity {
 
         Typeface font = Typeface.createFromAsset(getAssets(), "fff.ttf");
         ((TextView)findViewById(R.id.highCardRules)).setTypeface(font);
+        ((TextView)findViewById(R.id.highCardTitle)).setTypeface(font);
     }
 
     public void onPlayHighCard(View button) {

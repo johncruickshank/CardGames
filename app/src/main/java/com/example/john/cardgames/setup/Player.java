@@ -65,12 +65,15 @@ public class Player {
         }
     }
 
+    public int getHighCardValue() {
+        return getCards().get(0).highCardValue;
+    }
+
     public boolean isBust() {
         return (getPlayerScore() > 21);
     }
 
     public boolean checkBlackjack() {
-        calculateScore();
         return getPlayerScore() == 21;
     }
 

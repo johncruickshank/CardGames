@@ -23,13 +23,13 @@ public class GameHighCard {
     }
 
     public Player checkWinner(Player player, Dealer dealer) {
-        if (player.getPlayerScore() > dealer.getPlayerScore()) {
+        if (player.getHighCardValue() > dealer.getHighCardValue()) {
             return player;
         }
-        if (player.getPlayerScore() == dealer.getPlayerScore()) {
-            return null;
+        if (player.getHighCardValue() < dealer.getHighCardValue()) {
+                return dealer;
         }
-        return dealer;
+        return null;
     }
 
 }

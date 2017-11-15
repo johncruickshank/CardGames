@@ -1,6 +1,7 @@
 package com.example.john.cardgames.activities;
 
 import android.graphics.Typeface;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -78,6 +79,7 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
         Typeface font = Typeface.createFromAsset(getAssets(), "fff.ttf");
         ((TextView)findViewById(R.id.playerWins)).setTypeface(font);
         ((TextView)findViewById(R.id.dealerWins)).setTypeface(font);
+        ((TextView)findViewById(R.id.dealText)).setTypeface(font);
     }
 
     public static void main(String[] args) {
@@ -120,16 +122,17 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
         // deal initial cards
         game.initialDeal();
         // display one dealer card, 2 player
-        player.getCards();
         realPlay1.setImageResource(player.getCards().get(0).getImage());
         realPlay2.setImageResource(player.getCards().get(1).getImage());
         realPlay1.setVisibility(View.VISIBLE);
         realPlay2.setVisibility(View.VISIBLE);
+
         realDeal1.setImageResource(dealer.getCards().get(0).getImage());
         realDeal1.setVisibility(View.VISIBLE);
-
         realDeal2.setVisibility(View.VISIBLE);
-
+        // set player scores
+        player.calculateScore();
+        dealer.calculateScore();
         // check for blackjack
         if (player.checkBlackjack()) {
             gameOver();
@@ -177,28 +180,25 @@ public class BlackjackGameActivity extends AppCompatActivity implements View.OnC
         // dealer must twist if score < 16, and if score is less than players
         while (!dealer.isBust() && dealer.getPlayerScore() < player.getPlayerScore() && dealer.getPlayerScore() < 16) {
 
-            dealer.takeCard(dealer.deal());
-            if (dealer.getCards().size() == 3) {
-                realDeal3.setImageResource(dealer.getCards().get(2).getImage());
-                realDeal3.setVisibility(View.VISIBLE);
-            }
-            if (dealer.getCards().size() == 4) {
-                realDeal4.setImageResource(dealer.getCards().get(3).getImage());
-                realDeal4.setVisibility(View.VISIBLE);
-            }
-            if (dealer.getCards().size() == 5) {
-                realDeal5.setImageResource(dealer.getCards().get(4).getImage());
-                realDeal5.setVisibility(View.VISIBLE);
-            }
-            // store the dealers score, game over if bust
-            dealer.calculateScore();
-            if (dealer.isBust()) {
-                gameOver();
-            }
+                    dealer.takeCard(dealer.deal());
+                    if (dealer.getCards().size() == 3) {
+                        realDeal3.setImageResource(dealer.getCards().get(2).getImage());
+                        realDeal3.setVisibility(View.VISIBLE);
+                    }
+                    if (dealer.getCards().size() == 4) {
+                        realDeal4.setImageResource(dealer.getCards().get(3).getImage());
+                        realDeal4.setVisibility(View.VISIBLE);
+                    }
+                    if (dealer.getCards().size() == 5) {
+                        realDeal5.setImageResource(dealer.getCards().get(4).getImage());
+                        realDeal5.setVisibility(View.VISIBLE);
+                    }
+                    // store the dealers score, game over if bust
+                    dealer.calculateScore();
+                }
+            // go to game over after dealers turn
+            gameOver();
         }
-        // go to game over after dealers turn
-        gameOver();
-    }
 
     // end game, display winner, offer restart
     public void gameOver() {

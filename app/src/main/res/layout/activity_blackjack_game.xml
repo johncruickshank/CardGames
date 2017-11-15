@@ -11,14 +11,11 @@
         android:id="@+id/dealerWins"
         android:layout_width="168dp"
         android:layout_height="54dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
         android:textAlignment="center"
         android:textColor="#712b94"
         android:textSize="24sp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -104,7 +101,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/playerImage1"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.417" />
 
     <ImageView
         android:id="@+id/dealerImage2"
@@ -120,7 +117,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/playerImage2"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.417" />
 
     <ImageView
         android:id="@+id/dealerImage4"
@@ -137,7 +134,7 @@
         app:layout_constraintBottom_toTopOf="@+id/playerImage4"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintVertical_bias="0.419" />
 
     <ImageView
         android:id="@+id/dealerImage3"
@@ -154,7 +151,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/playerImage3"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.417" />
 
     <ImageView
         android:id="@+id/dealerImage5"
@@ -171,7 +168,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/playerImage5"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.417" />
 
     <ImageButton
         android:id="@+id/dealButton"
@@ -185,11 +182,10 @@
         android:elevation="7dp"
         android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435" />
+        app:layout_constraintVertical_bias="0.405" />
 
     <Button
         android:id="@+id/stickButton"
@@ -199,7 +195,7 @@
         android:layout_marginLeft="75dp"
         android:background="@drawable/action_button"
         android:onClick="stick"
-        android:text="stick"
+        android:text="@string/stick"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -235,7 +231,7 @@
         app:srcCompat="@drawable/you_lose"
         android:visibility="invisible"
         app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintVertical_bias="0.459" />
+        app:layout_constraintVertical_bias="0.454" />
 
     <ImageView
         android:id="@+id/playerWin"
@@ -252,7 +248,7 @@
         app:srcCompat="@drawable/win"
         android:visibility="invisible"
         app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintVertical_bias="0.477" />
+        app:layout_constraintVertical_bias="0.449" />
 
     <ImageButton
         android:id="@+id/playAgainButton"
@@ -275,7 +271,7 @@
         android:id="@+id/playerWins"
         android:layout_width="168dp"
         android:layout_height="107dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginLeft="11dp"
         android:layout_marginTop="16dp"
         android:textAlignment="center"
         android:textColor="#712b94"
@@ -285,10 +281,10 @@
 
     <TextView
         android:id="@+id/dealText"
-        android:layout_width="175dp"
-        android:layout_height="37dp"
+        android:layout_width="205dp"
+        android:layout_height="33dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="90dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -299,6 +295,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.439" />
+        app:layout_constraintVertical_bias="0.527" />
 
 </android.support.constraint.ConstraintLayout>

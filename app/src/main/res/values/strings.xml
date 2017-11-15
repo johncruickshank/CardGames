@@ -4,4 +4,6 @@
     <string name="card_games">Card Games!</string>
     <string name="click_the_deck_to_deal">Click the deck to deal</string>
     <string name="highCardRules">Draw one card each.\nPlayer with the highest card wins!</string>
+    <string name="high_card">High Card</string>
+    <string name="stick">stick</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.john.cardgames.activities;
 
 import android.graphics.Typeface;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.example.john.cardgames.setup.Game21;
 import com.example.john.cardgames.setup.GameHighCard;
 import com.example.john.cardgames.setup.Player;
 
+import static com.example.john.cardgames.R.id.drawImage;
 import static com.example.john.cardgames.R.id.houseWins;
 import static com.example.john.cardgames.activities.BlackjackGameActivity.realDeal2;
 
@@ -34,6 +36,7 @@ public class HighCardGameActivity extends AppCompatActivity {
     static ImageView realDeal1;
     static ImageView houseWin;
     static ImageView playerWin;
+    static ImageView draw;
     static TextView playerWins;
     static TextView dealerWins;
     static TextView dealText;
@@ -52,19 +55,23 @@ public class HighCardGameActivity extends AppCompatActivity {
         realDeal1 = (ImageView) findViewById(R.id.dealerImage1);
         houseWin = (ImageView) findViewById(houseWins);
         playerWin = (ImageView) findViewById(R.id.playerWin);
+        draw = (ImageView) findViewById(R.id.drawImage);
         playerWins = (TextView) findViewById(R.id.playerWins);
         dealerWins = (TextView) findViewById(R.id.dealerWins);
         dealText = (TextView) findViewById(R.id.dealText);
         Typeface font = Typeface.createFromAsset(getAssets(), "fff.ttf");
-        ((TextView)findViewById(R.id.playerWins)).setTypeface(font);
-        ((TextView)findViewById(R.id.dealerWins)).setTypeface(font);
+        ((TextView) findViewById(R.id.playerWins)).setTypeface(font);
+        ((TextView) findViewById(R.id.dealerWins)).setTypeface(font);
+        ((TextView) findViewById(R.id.dealText)).setTypeface(font);
     }
+
 
     public void onPlayAgain(View view) {
         deal.setVisibility(View.VISIBLE);
         dealText.setVisibility(View.VISIBLE);
         houseWin.setVisibility(View.GONE);
         playerWin.setVisibility(View.GONE);
+        draw.setVisibility(View.GONE);
         realPlay1.setVisibility(View.INVISIBLE);
         realDeal1.setVisibility(View.INVISIBLE);
         playAgain.setVisibility(View.GONE);
@@ -85,10 +92,17 @@ public class HighCardGameActivity extends AppCompatActivity {
         // deal initial cards
         game.initialDeal();
         // display both cards
-        player.setPlayerScore(player.getCards().get(0).getValue());
-        dealer.setPlayerScore(dealer.getCards().get(0).getValue());
+        player.setPlayerScore(player.getHighCardValue());
+        dealer.setPlayerScore(dealer.getHighCardValue());
         realPlay1.setImageResource(player.getCards().get(0).getImage());
-        realDeal1.setImageResource(dealer.getCards().get(0).getImage());
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                realDeal1.setImageResource(dealer.getCards().get(0).getImage());
+            }
+        }, 1000);
+
         realPlay1.setVisibility(View.VISIBLE);
         realDeal1.setVisibility(View.VISIBLE);
 
@@ -97,23 +111,30 @@ public class HighCardGameActivity extends AppCompatActivity {
     }
 
     public void gameOver() {
-        if (game.checkWinner(player, dealer) == player) {
-            playerWin.setVisibility(View.VISIBLE);
-            playAgain.setVisibility(View.VISIBLE);
-            playerWinCounter = playerWinCounter + 1;
-        }
-        if (game.checkWinner(player, dealer) == null) {
-            // perform tie activity
-            playAgain.setVisibility(View.VISIBLE);
-        }
-        if (game.checkWinner(player, dealer) == dealer) {
-            houseWin.setVisibility(View.VISIBLE);
-            playAgain.setVisibility(View.VISIBLE);
-            houseWinCounter = houseWinCounter + 1;
-        }
-        // display win count
-        playerWins.setText(name + "'s wins:\n" + playerWinCounter);
-        dealerWins.setText("Dealer's wins:\n" + houseWinCounter);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (game.checkWinner(player, dealer) == player) {
+                    playerWin.setVisibility(View.VISIBLE);
+                    playAgain.setVisibility(View.VISIBLE);
+                    playerWinCounter = playerWinCounter + 1;
+                }
+                if (game.checkWinner(player, dealer) == null) {
+                    // perform draw activity
+                    draw.setVisibility(View.VISIBLE);
+                    playAgain.setVisibility(View.VISIBLE);
+                }
+                if (game.checkWinner(player, dealer) == dealer) {
+                    houseWin.setVisibility(View.VISIBLE);
+                    playAgain.setVisibility(View.VISIBLE);
+                    houseWinCounter = houseWinCounter + 1;
+                }
+                // display win count
+                playerWins.setText(name + "'s wins:\n" + playerWinCounter);
+                dealerWins.setText("Dealer's wins:\n" + houseWinCounter);
+            }
+        }, 2500);
     }
 }
 
